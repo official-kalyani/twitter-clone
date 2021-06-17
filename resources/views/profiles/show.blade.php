@@ -20,7 +20,7 @@
      </div>
    </div>
  </header>
- @include('_timeline',[
-    'tweets' => $user->tweets
- ])
+ @if(auth()->user()->following($user))
+ @include('_timeline')
+ @endif
 @endsection
